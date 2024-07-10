@@ -107,7 +107,7 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
 			[
 				'label' => esc_html__( 'Team Show Per Page', 'rsaddon' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'example 3', 'rsaddon' ),
+				'placeholder' => esc_html__( '-1', 'rsaddon' ),
 				'separator' => 'before',
 				'condition' => [
 					'team_grid_source' => 'dynamic',
@@ -426,8 +426,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
                     '{{WRAPPER}} .team-grid-style5 .team-inner-wrap:hover .team-content .member-desc .team-name a:hover' => 'color: {{VALUE}};',
                 ],                
             ]
-
-            
         );
 
         $this->add_group_control(
@@ -499,7 +497,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
                     '{{WRAPPER}} .team-item .team-content .team-text' => 'color: {{VALUE}};',
                     '{{WRAPPER}} .team-grid-style3 .team-img .team-img-sec .team-content' => 'color: {{VALUE}};',
                     '{{WRAPPER}} .team-grid-style4 .team-item .team-content .team-text' => 'color: {{VALUE}};',
-
                 ],                
             ]
         );
@@ -640,7 +637,7 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'box_shadow',
-				'label' => __( 'Box Shadow', 'plugin-domain' ),
+				'label' => __( 'Box Shadow', 'rsaddon' ),
 				'selector' => '{{WRAPPER}} .team-content',
 			]
 		);
