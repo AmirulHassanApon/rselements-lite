@@ -20,74 +20,24 @@ defined( 'ABSPATH' ) || die();
 
 class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
 
-	/**
-	 * Get widget name.
-	 *
-	 * Retrieve rsgallery widget name.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 * @return string Widget name.
-	 */
+	
 	public function get_name() {
 		return 'rsteam';
 	}		
 
-	/**
-	 * Get widget title.
-	 *
-	 * Retrieve rsgallery widget title.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 * @return string Widget title.
-	 */
 	public function get_title() {
 		return __( 'RS Team Grid', 'rsaddon' );
 	}
 
-	/**
-	 * Get widget icon.
-	 *
-	 * Retrieve rsgallery widget icon.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 * @return string Widget icon.
-	 */
 	public function get_icon() {
 		return 'glyph-icon flaticon-network';
 	}
 	
-
-	/**
-	 * Get widget categories.
-	 *
-	 * Retrieve the list of categories the rsgallery widget belongs to.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 * @return array Widget categories.
-	 */
 	public function get_categories() {
         return [ 'rsaddon_category' ];
     }
 
-	/**
-	 * Register rsgallery widget controls.
-	 *
-	 * Adds different input fields to allow the user to change and customize the widget settings.
-	 *
-	 * @since 1.0.0
-	 * @access protected
-	 */
 	protected function register_controls() {
-
-		//$category_dropdown = array( '0' => __('Select Category', 'rsaddon' ) );	
 
 		$category_dropdown[0] = 'Select Category';
 		
@@ -96,7 +46,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
 			$category_dropdown[$id] = $name;
 		}    
 		
-
 		$this->start_controls_section(
 			'content_section',
 			[
@@ -118,7 +67,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
 			]
 		);
 
-
 		$this->add_control(
 			'team_grid_style',
 			[
@@ -137,7 +85,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
 			]
 		);
 
-
 		$this->add_control(
 			'team_category',
 			[
@@ -153,10 +100,7 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
 					'team_grid_source' => 'dynamic',
 				],	
 			]
-
 		);
-
-		
 
 		$this->add_control(
 			'per_page',
@@ -187,8 +131,7 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
 				'separator' => 'before',
 				'condition' => [
 					'team_grid_source' => 'dynamic',
-				],
-							
+				],							
 			]
 		);
 
@@ -224,8 +167,7 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
             ]
         ); 
 
-
-          $this->add_control(
+        $this->add_control(
             'title',
             [
                 'label' => esc_html__( 'Name', 'rsaddon' ),                
@@ -306,7 +248,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
             ]
         );
  		
-
         $this->add_control(
 			'team_grid_popup',
 			[
@@ -324,7 +265,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
 			]
 		);   
 
-
         $this->end_controls_section();
 
         $this->start_controls_section(
@@ -337,7 +277,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
 				],
             ]
         );
-
 
  		$repeater = new Repeater();
  		
@@ -396,7 +335,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
  		    ]
  		);
  		
-
  		$this->add_control(
  		    'social_icon_list',
  		    [
@@ -420,8 +358,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
                 ],
  		    ]
  		);
-
-
 
         $this->add_control(
 			'image_spacing_custom',
@@ -448,10 +384,7 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
 				],
 			]
 		);  
-
-
 		
-				
 		$this->end_controls_section();
 
 		$this->start_controls_section(
@@ -461,8 +394,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-
-		
 
         $this->add_control(
             'title_color',
@@ -480,8 +411,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
                 ],                
             ]
         );
-
-
 
         $this->add_control(
             'title_color_hover',
@@ -516,7 +445,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
 			]
 		);
 
-
         $this->add_control(
             'designation_color',
             [
@@ -529,7 +457,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
                 ],                
             ]
         );
-
 
         $this->add_control(
             'content_hover_bg',
@@ -545,7 +472,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
                 ],                
             ]
         );
-
 
         $this->add_control(
             'content_hover_text_color',
@@ -564,7 +490,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
             ]
         );
 
-
         $this->add_control(
             'content_color',
             [
@@ -578,7 +503,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
                 ],                
             ]
         );
-
 
         $this->add_control(
             'content_top_border_color',
@@ -595,7 +519,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
             ]
         );
 
-
         $this->add_control(
             'content_bottom_border_color',
             [
@@ -611,7 +534,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
             ]
         );
 
-
         $this->add_control(
             'image_overlay',
             [
@@ -626,7 +548,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
                 ],                
             ]
         );
-
 
         $this->add_control(
             'image_corner_border_color',
@@ -644,7 +565,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
             ]
         );
 
-
         $this->add_control(
             'icon_section_bg',
             [
@@ -660,7 +580,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
             ]
         );
 		
-
         $this->add_control(
 			'icon_font_size',
 			[
@@ -684,7 +603,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
                 'separator' => 'before',
 			]
 		);
-
 
         $this->add_control(
             'icon_color',
@@ -740,8 +658,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
 
 		$this->end_controls_section();
 
-
-
 		//Popup Style Setting
 		$this->start_controls_section(
 			'section_popup_style',
@@ -761,7 +677,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
                 'type' => Controls_Manager::COLOR,                              
             ]
         );
-
 
         $this->add_control(
             'popup_designation_color',
@@ -815,6 +730,7 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
             ]
             
         );
+
 		$this->end_controls_section();
 
 	}
@@ -876,7 +792,6 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
 				require_once plugin_dir_path(__FILE__)."/style6.php";
 			}		
 		}else{ ?>
-
 
 			<div class="rs-team-grid rs-team team-grid-<?php echo esc_html($settings['team_grid_style']);?> <?php echo esc_html($settings['team_grid_popup']);?> rsaddon_lite_box">
 				<?php 
@@ -1014,11 +929,9 @@ class Rsaddon_Elementor_lite_Team_Grid_Widget extends \Elementor\Widget_Base {
 						</div>
 					</div>
 				</div>
-
 			</div>
 		<?php 
-
+		
 		}		
-
 	}
 }?>
